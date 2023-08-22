@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .wrap {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .currentView,
+      .mySel {
+        font-weight: bold;
+        color: red;
+        font-size: 20px;
+      }
+      .tit {
+        width: 200px;
+        font-size: 25px;
+      }
+      .tit2 {
+        text-align: center;
+      }
+      .tit3 {
+        padding-bottom: 10px;
+        font-size: 20px;
+      }
+      .side {
+        margin-right: 50px;
+      }
+    </style>
+  </head>
+  <body class="wrap">
+    <table class="side">
+      <caption class="tit">
+        지난 경기 결과
+        <button class="reset">초기화</button>
+      </caption>
+      <tr>
+        <th class="tit3">승</th>
+        <th class="tit3">패</th>
+        <th class="tit3">무</th>
+      </tr>
+    </table>
+    <div>
+      <header>미니플젝 RSP</header>
+      <div class="container">
+        <button class="startBtn">게임시작</button>
+        <button class="endBtn" disabled>종료</button>
+        <br />
+        <br />
+        <div>
+          <button class="btn" disabled>가위</button>
+          <button class="btn" disabled>바위</button>
+          <button class="btn" disabled>보</button>
+          <div>유저</div>
+          <span class="mySel"></span>
+        </div>
+        <br />
+        <div>
+          <div>승 : <span class="win">0</span></div>
+          <div>패 : <span class="lose">0</span></div>
+          <div>무 : <span class="tie">0</span></div>
+        </div>
+
+        <hr />
+
+        <div>
+          <div>컴터</div>
+          <span class="comOutput">가위</span>
+          <span class="comOutput">바위</span>
+          <span class="comOutput">보</span>
+        </div>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='RSP.js') }}"></script>
+  </body>
+</html>
